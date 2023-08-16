@@ -1,5 +1,7 @@
 export interface Blog {
   id?: string;
   title: string;
-  description?: string;
+  date?: Date;
+  auther?: string;
+  description: string;
 }
