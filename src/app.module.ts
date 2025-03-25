@@ -6,6 +6,7 @@ import { AppService } from './app.service';
 import { BlogModule } from './blog/blog.module';
 import { UserModule } from './user/user.module';
 import config from './config/keys';
+import { validate } from './validator/env.validator';
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import config from './config/keys';
     ConfigModule.forRoot({
       envFilePath: '.env', // Specify the path to your .env file
       isGlobal: true, // Make the configuration global (available throughout the app)
+      validate,
       load: [config],
     }),
     MongooseModule.forRootAsync({
